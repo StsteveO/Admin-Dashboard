@@ -9,11 +9,6 @@ body, html {
     margin: 0;
 }
 
-.container {
-    height: 100%;
-    /* padding: 16px; */
-}
-
 :root{
     /* --custom name: value; */
     /* --light-green-bg: #476529; */
@@ -27,10 +22,19 @@ body, html {
 /* Light 300, Regular 400, Bold 700, Black 900 */
 
 .container{
+    height: 100%;
     font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-columns: 1fr 5fr 2fr;
     grid-template-rows: 1fr 1fr 7fr;
+}
+
+.sidebar, 
+header, 
+nav, 
+article, 
+aside{
+    padding: 1rem;
 }
 
 .sidebar{
@@ -52,13 +56,46 @@ nav{
 }
 
 article{
-    grid-column: 2/-1;
+    grid-column: 2/-2;
     grid-row: 3/4; 
     background-color: #60BF81;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 }
+
+.article-title{
+    grid-column: 1/-1;
+    font-weight: bold;
+    align-self: center;
+}
+
+.card-aside-title{
+    font-weight: bold;
+    align-self: center;
+}
+
 
 aside{
     grid-column: 3/-1;
     grid-row: 3/4; 
     background-color: #03A64A;
+    padding-top: 2rem;
+}
+
+.card{
+    padding: 1rem;
+    border-radius: .5rem;
+    border-left: solid orange .5rem;
+    background-color: white;
+    width: 22rem;
+    height: 13rem;
+}
+
+.card-aside{
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: white;
+    width: 22rem;
+    height: 26rem;
 }
