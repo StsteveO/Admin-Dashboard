@@ -13,6 +13,9 @@ body, html {
     /* --custom name: value; */
     /* --light-green-bg: #476529; */
     /* example, color: var(--navy-clr) */
+    --icon-color: orange;
+    --bg-btn-color: rgb(60, 60, 255);
+    --article-bg-color: linear-gradient(180deg, rgb(211, 211, 211), rgb(231, 231, 231));
 }
 
 /* fonts */
@@ -40,7 +43,8 @@ aside{
 .sidebar{
     grid-column: 1/2;
     grid-row: 1/4;
-    background-color: #93D94E;
+    background-color: var(--bg-btn-color);
+    color: white;
     display: grid;
     grid-template-columns: .5fr 2fr;
     grid-template-rows: repeat(20, 3rem);
@@ -56,22 +60,44 @@ aside{
 header{
     grid-column: 2/-1;
     grid-row: 1/2;
-    background-color: #3B8C66;
+    /* background-color: #3B8C66; */
+    display: grid;
+    grid-template-columns: 2rem .25fr 1fr 2rem 2rem 13rem;
+    align-items: center;
+    justify-items: end;
+}
+
+.search-bar{
+    border-radius: .5rem;
+    height: 2rem;
+    width: 30rem;
 }
 
 nav{
     grid-column: 2/-1;
     grid-row: 2/3;
-    background-color: #347355;
+    /* background-color: #347355; */
+    display: grid;
+    grid-template-columns: 3rem 1fr 1fr 7rem 7rem 7rem;
+    align-items: center;
+}
+
+.nav-button{
+    border-radius: .5rem;
+    height: 2rem;
+    width: 5rem;
+    background-color: var(--bg-btn-color);
+    color: white;
 }
 
 article{
     grid-column: 2/-2;
     grid-row: 3/4; 
-    background-color: #60BF81;
+    /* background-color: #60BF81; */
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    background-image: var(--article-bg-color);
 }
 
 .article-title{
@@ -101,14 +127,15 @@ article{
 aside{
     grid-column: 3/-1;
     grid-row: 3/4; 
-    background-color: #03A64A;
+    /* background-color: #03A64A; */
     padding-top: 2rem;
+    background-image: var(--article-bg-color);
 }
 
 .card{
     padding: 1rem;
     border-radius: .5rem;
-    border-left: solid orange .5rem;
+    border-left: solid var(--icon-color) .5rem;
     background-color: white;
     width: 22rem;
     height: 15rem;
@@ -120,6 +147,12 @@ aside{
     background-color: white;
     width: 22rem;
     height: 26rem;
+}
+
+.card-aside.trending{
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    align-items: center;
 }
 
 /* total icon */
@@ -143,4 +176,9 @@ aside{
 }
 .pointer{
     cursor: pointer;
+    font-weight: bold;
+}
+
+.pet{
+    color: var(--icon-color);
 }
